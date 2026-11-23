@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — Pre-Token DeFi Implied Value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div id="app">
+  <header id="top">
+    <div class="brand"><span class="glyph" aria-hidden="true"></span>
+      <div><div class="brand-name">TOKEN / RADAR</div>
+      <div class="brand-sub">PRE-TOKEN DEFI / IMPLIED TOKEN VALUE</div></div>
+    </div>
+    <div class="meta">
+      <div class="meta-g"><span>MODEL</span><b>radar-3</b></div>
+      <div class="meta-g"><span>AS OF</span><b id="m-asof">2026-11-14</b></div>
+      <div class="meta-g"><span>MARKET MULTIPLE</span><b id="m-mult">—</b></div>
+      <div class="meta-g"><span>DATA MODE</span><b class="capsule">SEALED · OFFLINE</b></div>
+    </div>
+  </header>
+
+  <section id="kpis" aria-label="Board summary">
+    <div class="kpi"><div class="kpi-v" id="k-board">—</div><div class="kpi-l">RANKED PRE-TOKEN</div></div>
+    <div class="kpi"><div class="kpi-v" id="k-mult">—</div><div class="kpi-l">RADAR-3 MODEL INPUT</div></div>
+    <div class="kpi"><div class="kpi-v" id="k-chg">—</div><div class="kpi-l">TVL · 7D MEDIAN</div></div>
+    <div class="kpi"><div class="kpi-v" id="k-comps">—</div><div class="kpi-l">VALUATION COMPARABLES</div></div>
+  </section>
+
+  <section id="charts">
+    <div class="panel" id="p-top10">
+      <div class="panel-h">TOP 10 <span>IMPLIED TOKEN VALUE</span></div>
+      <div id="top10"></div>
+    </div>
+    <div class="panel" id="p-cats">
+      <div class="panel-h">CATEGORY VALUATION MULTIPLES <span id="cat-base"></span></div>
+      <div id="cats"></div>
+    </div>
+  </section>
+
+  <div id="toolbar">
+    <input id="f-search" type="search" placeholder="Search protocol…" aria-label="Search protocol">
+    <select id="f-cat" aria-label="Category"><option value="">All categories</option></select>
+    <select id="f-chain" aria-label="Chain"><option value="">All chains</option></select>
+    <select id="f-chg" aria-label="7-day performance">
+      <option value="">7d: All</option><option value="pos">7d: Positive</option><option value="neg">7d: Negative</option>
+    </select>
+    <select id="f-sort" aria-label="Sort">
+      <option value="value">Sort: Implied value</option><option value="tvl">Sort: TVL</option><option value="chg">Sort: 7d change</option>
+    </select>
+    <div id="count">SHOWING — / 198</div>
+  </div>
+
+  <main id="workspace">
+    <div id="table-wrap">
+      <table id="board">
+        <thead><tr>
+          <th class="c-rank">#</th><th class="c-proto">PROTOCOL</th><th class="c-num">TVL</th>
+          <th class="c-num">7D</th><th class="c-num">AGE</th><th class="c-num">IMPLIED VALUE</th><th class="c-rel">RELATIVE VALUE</th>
+        </tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <aside id="drawer" hidden>
+      <div class="dr-h"><span>PROTOCOL INSPECTOR</span><button id="dr-x" aria-label="Close">✕</button></div>
+      <div id="dr-body"></div>
+    </aside>
+  </main>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
